@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=toughware
-Date                   :=01/05/2023
+Date                   :=01/06/2023
 CodeLitePath           :=/home/toughware/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -62,6 +62,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
+Srcs=hello-world.cpp favorite-number.cpp variable-sizes.cpp 
+
 Objects0=$(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix) $(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix) $(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix) 
 
 
@@ -88,31 +90,6 @@ $(IntermediateDirectory)/.d:
 	@test -d $(ConfigurationName) || $(MakeDirCommand) $(ConfigurationName)
 
 PreBuild:
-
-
-##
-## Objects
-##
-$(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix): hello-world.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/hello-world.cpp$(DependSuffix) -MM hello-world.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/toughware/Documents/WEB_PROJECTS/PRACTICES/C-PLUS-PLUS/first-cplusplus-practice/hello-world.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/hello-world.cpp$(PreprocessSuffix): hello-world.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/hello-world.cpp$(PreprocessSuffix) hello-world.cpp
-
-$(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix): favorite-number.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/favorite-number.cpp$(DependSuffix) -MM favorite-number.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/toughware/Documents/WEB_PROJECTS/PRACTICES/C-PLUS-PLUS/first-cplusplus-practice/favorite-number.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/favorite-number.cpp$(PreprocessSuffix): favorite-number.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/favorite-number.cpp$(PreprocessSuffix) favorite-number.cpp
-
-$(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix): variable-sizes.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/variable-sizes.cpp$(DependSuffix) -MM variable-sizes.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/toughware/Documents/WEB_PROJECTS/PRACTICES/C-PLUS-PLUS/first-cplusplus-practice/variable-sizes.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/variable-sizes.cpp$(PreprocessSuffix): variable-sizes.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/variable-sizes.cpp$(PreprocessSuffix) variable-sizes.cpp
-
-
--include $(IntermediateDirectory)/*$(DependSuffix)
 ##
 ## Clean
 ##

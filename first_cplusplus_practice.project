@@ -36,8 +36,8 @@
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="$(ConfigurationName)" Command="$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
-      <BuildSystem Name="Default"/>
-      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+      <BuildSystem Name="GNU makefile onestep build"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
       </Environment>
       <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
@@ -48,14 +48,14 @@
       <PreBuild/>
       <PostBuild/>
       <CustomBuild Enabled="no">
-        <RebuildCommand/>
-        <CleanCommand/>
-        <BuildCommand/>
+        <RebuildCommand>CTRL+SHIFT+R</RebuildCommand>
+        <CleanCommand>CTRL+SHIFT+C</CleanCommand>
+        <BuildCommand>CTRL+SHIFT+B</BuildCommand>
         <PreprocessFileCommand/>
-        <SingleFileCommand/>
+        <SingleFileCommand>CTRL+SHIFT+F1</SingleFileCommand>
         <MakefileGenerationCommand/>
         <ThirdPartyToolName/>
-        <WorkingDirectory/>
+        <WorkingDirectory>/home/toughware/Documents/WEB_PROJECTS/PRACTICES/C-PLUS-PLUS/first-cplusplus-practice</WorkingDirectory>
       </CustomBuild>
       <AdditionalRules>
         <CustomPostBuild/>
