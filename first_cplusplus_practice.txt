@@ -1,0 +1,1 @@
+Debug/hello-world.cpp.o Debug/favorite-number.cpp.o Debug/variable-sizes.cpp.o

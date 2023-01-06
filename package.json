@@ -1,0 +1,13 @@
+{
+  "name": "first-cplusplus-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "g++ -Wall -std=c++14 main.cpp -o main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
