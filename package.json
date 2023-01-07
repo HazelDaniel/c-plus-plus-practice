@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "g++ -Wall -std=c++17 arrays-and-vectors.cpp -o GCompiled/arrays-and-vectors.o",
+    "compile": "g++ -Wall -std=c++17 arrays.cpp -o GCompiled/arrays.o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
