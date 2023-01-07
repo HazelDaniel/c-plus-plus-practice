@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=toughware
-Date                   :=01/06/2023
+Date                   :=01/07/2023
 CodeLitePath           :=/home/toughware/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -62,9 +62,9 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Srcs=hello-world.cpp favorite-number.cpp variable-sizes.cpp 
+Srcs=favorite-number.cpp variable-sizes.cpp hello-world.cpp arrays.cpp cleaning-service.cpp vectors.cpp 
 
-Objects0=$(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix) $(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix) $(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/favorite-number.cpp$(ObjectSuffix) $(IntermediateDirectory)/variable-sizes.cpp$(ObjectSuffix) $(IntermediateDirectory)/hello-world.cpp$(ObjectSuffix) $(IntermediateDirectory)/arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/cleaning-service.cpp$(ObjectSuffix) $(IntermediateDirectory)/vectors.cpp$(ObjectSuffix) 
 
 
 

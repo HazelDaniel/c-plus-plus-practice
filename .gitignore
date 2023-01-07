@@ -4,3 +4,12 @@ Debug
 *.txt
 *.workspace
 Makefile
+**/**.project
+**/**.mk
+**/**.session
+**/**.tags
+*.tags
+*.project
+*.session
+*.mk
+*.workspace
