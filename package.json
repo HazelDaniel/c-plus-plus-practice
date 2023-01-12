@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "g++ -Wall -std=c++17 grade-report.cpp -o GCompiled/grade-report.o",
+    "compile": "g++ -Wall -std=c++17 list-evaluator.cpp -o GCompiled/list-evaluator.o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

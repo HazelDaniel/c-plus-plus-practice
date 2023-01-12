@@ -11,11 +11,12 @@ int main (){
 
     cout << "INPUT YOUR GRADE SCORE (0 - 100) : " << endl;
     cin >> score;
-    
+
     if(score && score > -1 && score <= 100){
+
         if(score >= 70){
-        grade = 'A';
-        cout << "Congrats! you got an " << grade << (score >= 90 ? "+" : "") << endl;
+            grade = 'A';
+            cout << "Congrats! you got an " << grade << (score >= 90 ? "+" : "") << endl;
         }else if (score >= 60){
             grade = 'B';
             cout << "Nice score! that's a " << grade << endl;
@@ -36,20 +37,31 @@ int main (){
             cout << "Are you sure (Y/N)?" << endl;
             cin >> confirmation;
 
-            switch(confirmation){
-                case 'Y':
-                case 'y':
-                    cout << "Oh! that's too bad. try harder next time" << endl;
-                    break;
-                case 'N':
-                case 'n':
-                    cout << "try again!" << endl;
-                    break;
-                default:
-                    cout << "Wrong input!" << endl;
+            bool input_done {false};
+
+
+            while(!input_done){
+
+                switch(confirmation){
+                    case 'Y':
+                    case 'y':
+                        cout << "Oh! that's too bad. try harder next time" << endl;
+                        input_done = true;
+                        break;
+                    case 'N':
+                    case 'n':
+                        cout << "pick yes dumbass!, how can you not be sure? mtcheeew!" << endl;
+                        cin >> confirmation;
+                        break;
+                    default:
+                        cout << "Wrong input!" << endl;
+                        input_done = true;
+                }
+
             }
 
         }
+
     }else{
         cout << "INVALID SCORE!" << endl;
     }
@@ -57,3 +69,6 @@ int main (){
     return 0;
 
 }
+
+
+// TODO: LEARN ABOUT C++ FUNCTIONS, USE RECURSION TO CALL THE FUNCTION AGAIN INSIDE THE WHILE LOOP FOR CASES WHEN THE STUDENT IS NOT SURE HE/SHE PICKED FAILURE
