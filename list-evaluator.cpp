@@ -42,6 +42,7 @@ int main (){
                     int input_prepend{};
 
                     cin >> input_prepend;
+                    // cin.clear();
                     el_list.push_back(input_prepend);
                     cout << "Added element : " << input_prepend << endl;
 
