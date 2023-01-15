@@ -1,16 +1,21 @@
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <vector>
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
+
+// PROTOTYPES
+void cypher_text(std::string input,const vector<string> &dict);
+void decypher_text(std::string input,const vector<string> &dict);
 
 int main (){
 
-    string alphabets {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    string cyphers {"XCVBNMSDFGrtyuiopasdfvbnmQWERghjklzxcTYUIIHJKLZqweOPA"};
+    vector<string> cypher_dictionary {{" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"},{"XCVBNMSDFGrtyuiopa:df>bnmQ WERghjklzxcTYUI<HJKLZqeOPA"}};
+    
     string input_text {};//hello
     string selection {};
 
@@ -28,8 +33,6 @@ int main (){
 
         char selected{selection.at(0)};
 
-        
-
         switch (selected){
             case 'Q':
             case 'q':
@@ -37,53 +40,11 @@ int main (){
                 break;
             case 'D':
             case 'd':
-                cout << "\nEnter text to decypher (less than 1001 characters) : ";
-                getline(cin,input_text);
-                {
-                
-                    size_t input_index{0};
-                    for(char input_char: input_text){
-
-                        size_t cypher_index{0};
-                        for(char cypher_char: cyphers){
-
-                            if(cypher_char == input_char){
-                                input_text.at(input_index) = alphabets.at(cypher_index);
-                            }
-
-                            cypher_index++;
-                        }
-
-                        input_index++;
-                    }
-
-                }
-                    cout << " Your decyphered Text is : " << input_text << endl;
+                decypher_text(input_text,cypher_dictionary);
                 break;
             case 'C':
             case 'c':
-                cout << "\nEnter text to cypher (less than 1001 characters) : ";
-                getline(cin,input_text);
-                {
-                
-                    size_t input_index{0};
-                    for(char input_char: input_text){
-
-                        size_t alpha_index{0};
-                        for(char alpha_char: alphabets){
-
-                            if(alpha_char == input_char){
-                                input_text.at(input_index) = cyphers.at(alpha_index);
-                            }
-
-                            alpha_index++;
-                        }
-
-                        input_index++;
-                    }
-
-                }
-                cout << " Your cyphered Text is : " << input_text << endl;
+                cypher_text(input_text,cypher_dictionary);
                 break;
 
             default:
@@ -91,10 +52,62 @@ int main (){
         }
 
 
-
     }while(selection.at(0) != "Q"[0] && selection.at(0) != "q"[0] && selection.at(0));
-
 
     return 0;
 
+}
+
+void cypher_text(std::string input_text,const vector<string> &dictionary){
+
+    string alphabets {dictionary.at(0)};
+    string cyphers {dictionary.at(1)};
+
+    cout << "\nEnter text to cypher (less than 1001 characters) : ";
+    getline(cin,input_text);
+    
+    size_t input_index{0};
+
+    for(char input_char: input_text){
+
+        size_t alpha_index {alphabets.find(input_char)};
+
+        if(alpha_index != string::npos){
+            input_text.at(input_index) = cyphers.at(alpha_index);
+        }else{
+            continue;
+        }
+
+        input_index++;
+    }
+
+    cout << " Your cyphered Text is : " << input_text << endl;
+    
+}
+
+void decypher_text(std::string input_text,const vector<string> &dictionary){
+
+    string alphabets {dictionary.at(0)};
+    string cyphers {dictionary.at(1)};
+
+    cout << "\nEnter text to cypher (less than 1001 characters) : ";
+    getline(cin,input_text);
+    
+    size_t input_index{0};
+
+    for(char input_char: input_text){
+
+        size_t cypher_index{cyphers.find(input_char)};
+
+        if(cypher_index != string::npos){
+            input_text.at(input_index) = alphabets.at(cypher_index);
+        }else{
+            continue;
+        }
+
+        input_index++;
+    }
+
+    cout << " Your decyphered Text is : " << input_text << endl;
+    
 }
