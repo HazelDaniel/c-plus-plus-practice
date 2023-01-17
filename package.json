@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "g++ -Wall -std=c++17 recursion.cpp -o GCompiled/recursion.o",
+    "compile": "g++ -Wall -std=c++17 pointers.cpp -o GCompiled/pointers.o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

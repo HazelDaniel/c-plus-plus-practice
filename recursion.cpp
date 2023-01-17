@@ -56,8 +56,6 @@ unsigned long long fibonacci (unsigned long long fib_number){
     if(fib_number <= 1){
         return fib_number;
     }else{
-        cout << fib_number<< endl;
-        cout << "__________________________" << endl;
         return fibonacci(fib_number - 1) + fibonacci(fib_number -2);
     }
     
@@ -96,22 +94,21 @@ void print_first_n_fibon (unsigned long long &input_number, vector<unsigned long
 
         if(input_number >=2){
             fibon_array.at(1) = 1;
+            cout << fibon_array[0] << " => " << fibon_array[1];
         }
 
         size_t x {1}, vind{2};
+
 
         while(vind < input_number){
 
             if(x == fibon_array.at(vind - 1) + fibon_array.at(vind - 2)){
                 fibon_array.at(vind) = x;
+                cout<< " => " << x;
                 vind ++;
             }
 
             x ++;
-        }
-
-        for(auto fibon_el: fibon_array){
-            cout << fibon_el << " ";
         }
 
 
