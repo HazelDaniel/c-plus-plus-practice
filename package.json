@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "g++ -Wall -std=c++17 dynamic-arrays.cpp -o GCompiled/dynamic-arrays.o",
+    "compile": "g++ -Wall -std=c++17 pointer-challenge.cpp -o GCompiled/pointer-challenge.o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
