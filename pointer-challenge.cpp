@@ -4,7 +4,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void print (int* arr_ptr , unsigned int size);
+void print (const int* arr_ptr , unsigned int size);
 int* apply_all ( const int* arr1_ptr, size_t size1, const int* arr2_ptr, size_t size2);
 
 int main (){
@@ -18,7 +18,7 @@ int main (){
     print(arr_2,3);
 
     int* compound_arr_ptr = apply_all(arr_1,6,arr_2,3);
-    
+
     cout << "is : " << endl;
     print(compound_arr_ptr,18);
 
@@ -27,7 +27,7 @@ int main (){
     return 0;
 }
 
-void print (int* arr_ptr , unsigned int size){
+void print (const int* arr_ptr , unsigned int size){
     cout << "[ ";
     for(size_t i {0}; i  < size; i++){
         cout << *(arr_ptr + i) << " ";
